@@ -37,7 +37,6 @@ SetFontSize 45
 # Currency & Events
 #--------------------------
 
-## Divine Orb Style
 Show
 Class "Currency"
 BaseType "Mirror" "Divine" "Perfect Jeweller's Orb"
@@ -49,7 +48,15 @@ PlayEffect Red
 MinimapIcon 2 Red Star
 SetFontSize 45
 
-# ---Currency Tier A: Gemcutter, Annullment
+Show
+Class "Pinnacle Keys"
+SetTextColor 255 0 0 255
+SetBorderColor 255 0 0 255
+SetBackgroundColor 255 255 255 255
+PlayAlertSound 6 300
+PlayEffect Red
+MinimapIcon 2 Red Star
+SetFontSize 45
 
 Show
 Class "Currency"
@@ -74,7 +81,7 @@ SetFontSize 40
 
 Show
 Class "Currency"
-BaseType "Chaos Orb" "Gemcutter's Prism"
+BaseType "Chaos Orb"
 SetTextColor 0 0 0 255
 SetBorderColor 0 0 0 255
 SetBackgroundColor 240 90 35 255
@@ -85,68 +92,40 @@ SetFontSize 45
 
 Show
 Class "Currency"
-BaseType "Exotic" "Exalted Orb" "Glassblower's Bauble" "Regal Orb"
+BaseType "Gemcutter's Prism"
+SetTextColor 0 0 0 255
+SetBorderColor 0 0 0 255
+SetBackgroundColor 240 90 35 255
+PlayAlertSound 2 300
+PlayEffect Yellow
+MinimapIcon 1 Yellow Circle
+SetFontSize 30
+
+Show
+Class "Currency"
+BaseType "Exalted Orb" "Glassblower's Bauble"
 SetTextColor 0 0 0 255
 SetBorderColor 0 0 0 255
 SetBackgroundColor 249 150 25 255
 PlayAlertSound 2 300
-PlayEffect White
-MinimapIcon 1 White Circle
+PlayEffect Yellow
+MinimapIcon 1 Yellow Circle
 SetFontSize 45
 
 Show
 Class "Currency"
-BaseType "Distilled" "Essence of" "Omen of"
-SetTextColor 255 207 132 255
-SetBorderColor 255 207 132 255
-SetBackgroundColor 76 51 12 255
-PlayAlertSound 2 300
-PlayEffect White
-MinimapIcon 1 White Circle
-SetFontSize 35
-
-#--- Currency Tier C: Vaal, Chaos, Exalt, Exotic
-
-Show
-Class "Currency"
-BaseType  "Armourer's Scrap" "Chance Shard" "Vaal Orb" "Orb of Alchemy"
+BaseType "Vaal Orb" "Orb of Alchemy" "Regal Orb"
 SetTextColor 0 0 0 255
 SetBorderColor 0 0 0 255
-SetBackgroundColor 210 178 135 255
-MinimapIcon 2 Grey Circle
-SetFontSize 35
-
-Show
-Class "Currency"
-BaseType "Simulacrum Splinter" " Artifact"
-SetTextColor 255 255 255 255
-SetBorderColor 255 255 255 255
-SetBackgroundColor 180 15 200
-MinimapIcon 2 Grey Circle
-SetFontSize 35
-
-Show
-Class "Pinnacle Keys"
-SetTextColor 255 207 255
-SetBorderColor 255 207 255
-SetBackgroundColor 65 20 80
+SetBackgroundColor 249 150 25 255
 PlayAlertSound 2 300
-PlayEffect White
-MinimapIcon 1 Yellow Square
-SetFontSize 40
+PlayEffect Yellow
+MinimapIcon 1 Yellow Circle
+SetFontSize 30
 
 Show
 Class "Currency"
-BaseType "Breach Splinter"
-SetTextColor 255 255 255 255
-SetBorderColor 255 255 255 255
-SetBackgroundColor 180 15 200
-MinimapIcon 2 Grey Circle
-SetFontSize 35
-
-Show
-Class "Currency"
-BaseType "Lesser Jeweller's Orb" "Arcanist's Etcher" "Blacksmith's Whetstone" "Artificer's Orb"
+BaseType "Lesser Jeweller's Orb" "Arcanist's Etcher" "Blacksmith's Whetstone" "Artificer's Orb" "Armourer's Scrap" "Chance Shard"
 SetTextColor 255 255 255 255
 SetBorderColor 190 178 135
 SetBackgroundColor 20 20 0
@@ -156,17 +135,116 @@ SetFontSize 30
 Show
 Class "Currency"
 BaseType "Shard" "Aug" "Orb of Transmutation"
-SetTextColor 255 255 255
-SetBorderColor 255 207 132
+SetTextColor 255 255 255 255
+SetBorderColor 190 178 135
+SetBackgroundColor 20 20 0
 SetFontSize 20
 
 Hide
 Class "Currency"
 BaseType "Wisdom"
+SetTextColor 255 255 255
+SetBorderColor 255 207 132
+SetFontSize 20
+AreaLevel > 65
+
+#--------------------------
+# Socketables
+#--------------------------
+
+Show
+BaseType "Soul Core" "Timeless"
+SetTextColor 255 0 0
+SetBorderColor 255 0 0
+MinimapIcon 2 Red Triangle
+PlayAlertSound 2 300
+PlayEffect Red
+SetFontSize 35
+
+Show
+BaseType "Rune" "Relic"
+SetTextColor 0 240 190
+SetBorderColor 0 240 190
+PlayEffect Cyan
+SetFontSize 30
+
+Show
+Class "Charms"
+BaseType == "Thawing Charm" "Amethyst Charm" "Golden Charm" "Stone Charm"
+SetBorderColor 0 240 190
+PlayEffect Cyan Temp
+SetFontSize 25
+
+Hide
+Class "Charms"
+Rarity <= Magic
+AreaLevel > 65
+
+#--------------------------
+# Events
+#--------------------------
+
+Show
+BaseType "Logbook"
+SetTextColor 255 255 255
+SetBorderColor 255 255 255
+PlayAlertSound 4 300
+PlayEffect White
+MinimapIcon 1 White Square
+SetFontSize 45
+
+Show
+BaseType " Tablet" "Breachstone" "Barya" "Ultimatum" "Cowardly Fate" "Deadly Fate" "Victorious Fate" " Fragment"
+SetTextColor 255 207 255
+SetBorderColor 255 0 0
+SetBackgroundColor 65 20 80
+PlayAlertSound 2 300
+PlayEffect White
+MinimapIcon 1 White Square
+SetFontSize 40
+
+Show
+Class "Currency"
+BaseType "Distilled Fear" "Distilled Suffering" "Distilled Isolation" "Greater Essence of Haste" "Greater Essence of Haste" "Greater Essence of Ruin" "Greater Essence of Torment" "Greater Essence of Electricity" "Greater Essence of Ice" "Greater Essence of Ruin" "Greater Essence of Sorcery"
+SetTextColor 255 0 0 255
+SetBorderColor 255 0 0 255
+SetBackgroundColor 255 255 255 255
+PlayAlertSound 6 300
+PlayEffect Red
+MinimapIcon 0 Red Star
+SetFontSize 45
+
+Show
+Class "Currency"
+BaseType "Distilled Despair" "Distilled Disgust" "Distilled Isolation" "Greater Essence"
+SetFontSize 45
+SetTextColor 255 255 255 255
+SetBorderColor 255 255 255 255
+SetBackgroundColor 240 90 35
+PlayAlertSound 1 300
+PlayEffect White
+MinimapIcon 1 White Circle
+SetFontSize 40
+
+Show
+Class "Currency"
+BaseType "Distilled" "Essence of"
 SetTextColor 255 207 132
 SetBorderColor 255 207 132
+SetBackgroundColor 76 51 12
+PlayAlertSound 2 300
+PlayEffect White
+MinimapIcon 1 White Circle
+SetFontSize 35
+
+Show
+Class "Currency"
+BaseType " Splinter" " Artifact" "Catalyst"
+SetTextColor 255 255 255 255
+SetBorderColor 255 255 255 255
+SetBackgroundColor 180 15 200
+MinimapIcon 2 Grey Circle
 SetFontSize 30
-AreaLevel > 65
 
 #--------------------------
 # Waystones
@@ -197,71 +275,6 @@ BaseType "Waystone"
 Rarity <= Rare
 AreaLevel > 65
 
-#--------------------------
-# Fragments/Tablets/Barya/Ultimatum
-#--------------------------
-
-Show
-BaseType "Simulacrum" " Tablet" "Breachstone" "Barya" "Ultimatum" " Fragment" "Cowardly Fate" "Deadly Fate" "Victorious Fate"
-SetTextColor 255 207 255
-SetBorderColor 255 0 0
-SetBackgroundColor 65 20 80
-PlayAlertSound 2 300
-PlayEffect White
-MinimapIcon 1 White Square
-SetFontSize 40
-
-Show
-BaseType "Logbook"
-SetTextColor 255 255 255
-SetBorderColor 255 255 255
-PlayAlertSound 4 300
-PlayEffect White
-MinimapIcon 1 White Square
-SetFontSize 40
-
-#--------------------------
-# Socketables
-#--------------------------
-
-#--- Special A Tier
-
-Show
-BaseType "Soul Core" "Timeless"
-SetTextColor 0 240 190
-SetBorderColor 0 240 190
-MinimapIcon 2 Cyan Triangle
-PlayEffect Cyan
-SetFontSize 40
-
-Show
-Class "Relic"
-SetTextColor 0 240 190
-SetBorderColor 0 240 190
-MinimapIcon 2 Cyan Triangle
-PlayEffect Cyan
-SetFontSize 40
-
-#--- Special B Tier - Any Runes and Charms
-
-Show
-BaseType "Rune"
-SetTextColor 0 240 190
-SetBorderColor 0 240 190
-PlayEffect Cyan
-SetFontSize 30
-
-Show
-Class "Charms"
-BaseType == "Thawing Charm" "Amethyst Charm" "Golden Charm" "Stone Charm"
-SetBorderColor 0 240 190
-PlayEffect Cyan Temp
-SetFontSize 25
-
-Hide
-Class "Charms"
-Rarity <= Magic
-AreaLevel > 65
 
 #--------------------------
 # Jewels
@@ -298,63 +311,6 @@ MinimapIcon 2 Purple Hexagon
 PlayAlertSound 6 300
 PlayEffect White
 SetFontSize 40
-
-#--------------------------
-# Leagues
-#--------------------------
-
-Show
-Class "Currency"
-BaseType "Distilled Fear" "Distilled Suffering" "Distilled Isolation" "Greater Essence of Haste" "Greater Essence of Haste" "Greater Essence of Ruin" "Greater Essence of Torment" "Greater Essence of Electricity" "Greater Essence of Ice" "Greater Essence of Ruin" "Greater Essence of Sorcery"
-SetTextColor 255 0 0 255
-SetBorderColor 255 0 0 255
-SetBackgroundColor 255 255 255 255
-PlayAlertSound 6 300
-PlayEffect Red
-MinimapIcon 0 Red Star
-SetFontSize 45
-
-Show
-Class "Currency"
-BaseType "Distilled Despair" "Distilled Disgust" "Distilled Isolation" "Greater Essence"
-SetFontSize 45
-SetTextColor 255 255 255 255
-SetBorderColor 255 255 255 255
-SetBackgroundColor 240 90 35
-PlayAlertSound 1 300
-PlayEffect White
-MinimapIcon 1 White Circle
-SetFontSize 40
-
-Show
-Class "Currency"
-BaseType "Distilled" "Essence of" "Omen of"
-SetTextColor 255 207 132
-SetBorderColor 255 207 132
-SetBackgroundColor 76 51 12
-PlayAlertSound 2 300
-PlayEffect White
-MinimapIcon 1 White Circle
-SetFontSize 45
-
-Show
-Class "Currency"
-BaseType "Neural Catalyst" "Adaptive Catalyst"
-SetTextColor 255 207 132
-SetBorderColor 255 207 132
-SetBackgroundColor 76 51 12
-PlayAlertSound 2 300
-PlayEffect White
-MinimapIcon 1 White Circle
-SetFontSize 40
-
-Show
-Class "Currency"
-BaseType "Catalyst"
-SetTextColor 255 207 132
-SetBorderColor 255 207 132
-SetBackgroundColor 76 51 12
-SetFontSize 45
 
 #--------------------------
 # Uncut Gems
@@ -460,24 +416,6 @@ Class "Body Armours"
 BaseType "Expert "
 Rarity == Rare
 BaseArmour == 0
-BaseEnergyShield == 0
-BaseEvasion > 0
-SetFontSize 25
-
-Show
-Class "Body Armours"
-BaseType "Expert "
-Rarity == Rare
-BaseArmour == 0
-BaseEnergyShield > 0
-BaseEvasion == 0
-SetFontSize 25
-
-Show
-Class "Body Armours"
-BaseType "Expert "
-Rarity == Rare
-BaseArmour == 0
 BaseEnergyShield > 0
 BaseEvasion == 0
 SetFontSize 25
@@ -492,24 +430,6 @@ BaseEvasion > 0
 SetFontSize 25
 
 Show
-Class "Body Armours"
-BaseType "Expert "
-Rarity == Rare
-BaseArmour == 0
-BaseEnergyShield > 0
-BaseEvasion > 0
-SetFontSize 25
-
-Show
-Class "Helmets"
-BaseType "Expert "
-Rarity == Rare
-BaseArmour == 0
-BaseEnergyShield == 0
-BaseEvasion > 0
-SetFontSize 25
-
-Show
 Class "Helmets"
 BaseType "Expert "
 Rarity == Rare
@@ -525,24 +445,6 @@ Rarity == Rare
 BaseArmour == 0
 BaseEnergyShield > 0
 BaseEvasion == 0
-SetFontSize 25
-
-Show
-Class "Helmets"
-BaseType "Expert "
-Rarity == Rare
-BaseArmour == 0
-BaseEnergyShield > 0
-BaseEvasion == 0
-SetFontSize 25
-
-Show
-Class "Helmets"
-BaseType "Expert "
-Rarity == Rare
-BaseArmour == 0
-BaseEnergyShield > 0
-BaseEvasion > 0
 SetFontSize 25
 
 Show
@@ -568,35 +470,8 @@ Class "Gloves"
 BaseType "Expert "
 Rarity == Rare
 BaseArmour == 0
-BaseEnergyShield == 0
-BaseEvasion > 0
-SetFontSize 25
-
-Show
-Class "Gloves"
-BaseType "Expert "
-Rarity == Rare
-BaseArmour == 0
 BaseEnergyShield > 0
 BaseEvasion == 0
-SetFontSize 25
-
-Show
-Class "Gloves"
-BaseType "Expert "
-Rarity == Rare
-BaseArmour == 0
-BaseEnergyShield > 0
-BaseEvasion == 0
-SetFontSize 25
-
-Show
-Class "Gloves"
-BaseType "Expert "
-Rarity == Rare
-BaseArmour == 0
-BaseEnergyShield > 0
-BaseEvasion > 0
 SetFontSize 25
 
 Show
@@ -622,35 +497,8 @@ Class "Boots"
 BaseType "Expert "
 Rarity == Rare
 BaseArmour == 0
-BaseEnergyShield == 0
-BaseEvasion > 0
-SetFontSize 25
-
-Show
-Class "Boots"
-BaseType "Expert "
-Rarity == Rare
-BaseArmour == 0
 BaseEnergyShield > 0
 BaseEvasion == 0
-SetFontSize 25
-
-Show
-Class "Boots"
-BaseType "Expert "
-Rarity == Rare
-BaseArmour == 0
-BaseEnergyShield > 0
-BaseEvasion == 0
-SetFontSize 25
-
-Show
-Class "Boots"
-BaseType "Expert "
-Rarity == Rare
-BaseArmour == 0
-BaseEnergyShield > 0
-BaseEvasion > 0
 SetFontSize 25
 
 Show
@@ -665,30 +513,6 @@ SetFontSize 25
 Hide
 Class "Body Armours" "Boots" "Gloves" "Helmets" "Bows" "Crossbows" "Foci" "One Hand Maces" "Quivers" "Quarterstaves" "Sceptres" "Shields" "Staves" "Two Hand Maces" "Wands" "Belts"
 Rarity <= Rare
-AreaLevel > 65
-
-#--------------------------
-# Salvagable Items (Unhide when needed)
-#--------------------------
-
-Hide
-Quality > 10
-Rarity >= Normal
-PlayEffect Grey
-MinimapIcon 0 Grey Circle
-SetTextColor 255 255 255 255
-SetBackgroundColor 127 127 127
-SetFontSize 25
-AreaLevel > 65
-
-Hide
-Sockets > 1
-Rarity >= Normal
-PlayEffect Grey
-MinimapIcon 0 Grey Circle
-SetTextColor 255 255 255 255
-SetBackgroundColor 127 127 127
-SetFontSize 25
 AreaLevel > 65
 
 #--------------------------
@@ -763,23 +587,47 @@ AreaLevel > 65
 #--------------------------
 
 Show
-Class "Life Flasks"
-BaseType == "Ultimate Life Flask"
+Class "Flask"
+BaseType "Ultimate"
+ItemLevel >= 71
 Quality >= 10
+SetBorderColor 0 255 0
+PlayEffect Grey
+SetFontSize 35
+
+Show
+Class "Flask"
+BaseType "Ultimate"
+ItemLevel >= 71
+SetBorderColor 255 0 0
+SetFontSize 25
 
 Hide
-Class "Life Flasks"
-Rarity <= Rare
+Class "Flask"
+AreaLevel > 65
+
+#--------------------------
+# Salvagable Items (Uncomment when needed)
+#--------------------------
+
+Show
+Quality > 10
+Rarity >= Normal
+PlayEffect Grey
+MinimapIcon 0 Grey Circle
+SetTextColor 255 255 255 255
+SetBackgroundColor 127 127 127
+SetFontSize 25
 AreaLevel > 65
 
 Show
-Class "Mana Flasks"
-BaseType == "Ultimate Mana Flask"
-Quality >= 10
-
-Hide
-Class "Mana Flasks"
-Rarity <= Magic
+Sockets > 1
+Rarity >= Normal
+PlayEffect Grey
+MinimapIcon 0 Grey Circle
+SetTextColor 255 255 255 255
+SetBackgroundColor 127 127 127
+SetFontSize 25
 AreaLevel > 65
 
 #--------------------------
