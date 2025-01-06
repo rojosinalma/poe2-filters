@@ -4,7 +4,19 @@
 
 Show
 Rarity Unique
-BaseType "Heavy Belt" "Grand Regalia" "Armoured Cap" "Furtive Wraps" "Utility Belt" "Ornate Belt" "Smuggler Coat" "Flask" "Crude Bow" "Long Quarterstaff" "Wrapped Greathelm" "Spiked Club"
+BaseType "Heavy Belt" "Grand Regalia" "Armoured Cap" "Furtive Wraps" "Utility Belt" "Ornate Belt" "Smuggler Coat" "Flask" "Long Quarterstaff" "Wrapped Greathelm" "Spiked Club"
+SetTextColor 255 0 0 255
+SetBorderColor 255 0 0 255
+SetBackgroundColor 255 255 255 255
+PlayAlertSound 6 300
+PlayEffect Red
+MinimapIcon 2 Red Star
+SetFontSize 45
+
+Show
+Rarity Unique
+BaseType "Crude Bow"
+Sockets > 2
 SetTextColor 255 0 0 255
 SetBorderColor 255 0 0 255
 SetBackgroundColor 255 255 255 255
@@ -239,7 +251,7 @@ SetFontSize 35
 
 Show
 Class "Currency"
-BaseType " Splinter" " Artifact" "Catalyst"
+BaseType "Exotic" " Splinter" " Artifact" "Catalyst"
 SetTextColor 255 255 255 255
 SetBorderColor 255 255 255 255
 SetBackgroundColor 180 15 200
