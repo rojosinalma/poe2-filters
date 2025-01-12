@@ -126,7 +126,7 @@ SetFontSize 45
 
 Show
 Class "Currency"
-BaseType "Vaal Orb" "Orb of Alchemy" "Regal Orb"
+BaseType "Vaal Orb" "Orb of Alchemy"
 SetTextColor 0 0 0 255
 SetBorderColor 0 0 0 255
 SetBackgroundColor 249 150 25 255
@@ -144,17 +144,9 @@ SetBackgroundColor 20 20 0
 MinimapIcon 2 Grey Circle
 SetFontSize 30
 
-Show
-Class "Currency"
-BaseType "Shard" "Aug" "Orb of Transmutation"
-SetTextColor 255 255 255 255
-SetBorderColor 190 178 135
-SetBackgroundColor 20 20 0
-SetFontSize 20
-
 Hide
 Class "Currency"
-BaseType "Wisdom"
+BaseType "Wisdom" "Regal Orb" "Aug" "Orb of Transmutation" "Shard"
 SetTextColor 255 255 255
 SetBorderColor 255 207 132
 SetFontSize 20
@@ -173,18 +165,17 @@ PlayAlertSound 2 300
 PlayEffect Red
 SetFontSize 35
 
-Show
+Hide
 BaseType "Rune" "Relic"
 SetTextColor 0 240 190
 SetBorderColor 0 240 190
-PlayEffect Cyan
-SetFontSize 30
+PlayEffect Cyan Temp
+SetFontSize 25
 
-Show
+Hide
 Class "Charms"
 BaseType == "Thawing Charm" "Amethyst Charm" "Golden Charm" "Stone Charm"
 SetBorderColor 0 240 190
-PlayEffect Cyan Temp
 SetFontSize 25
 
 Hide
@@ -330,7 +321,7 @@ SetFontSize 40
 
 Show
 BaseType "Uncut"
-ItemLevel >= 19
+ItemLevel == 20
 SetTextColor 255 0 0 255
 SetBorderColor 255 0 0 255
 SetBackgroundColor 255 255 255 255
@@ -338,6 +329,17 @@ PlayAlertSound 6 300
 PlayEffect Red
 MinimapIcon 0 Red Star
 SetFontSize 45
+
+Show
+BaseType "Uncut"
+ItemLevel == 19
+SetTextColor 255 0 0 255
+SetBorderColor 255 0 0 255
+SetBackgroundColor 255 255 255 255
+PlayAlertSound 6 300
+PlayEffect Red
+MinimapIcon 0 Red Star
+SetFontSize 35
 
 #Show
 #BaseType "Uncut"
@@ -353,62 +355,98 @@ ItemLevel < 19
 AreaLevel > 65
 
 #--------------------------
-# Specific Gear
+# Specific Gear (Blue Cross)
 #--------------------------
 
 Show
-Class "Quarterstaves"
-BaseType == "Expert Gothic Quarterstaff" "Expert Crescent Quarterstaff" "Expert Long Quarterstaff" "Expert Crackling Quarterstaff" "Expert Barrier Quarterstaff" "Expert Slicing Quarterstaff"
-Rarity >= "Rare"
+BaseType "Expert " "Advanced "
+Rarity >= "Magic"
+ItemLevel 82
+PlayEffect Orange
+MinimapIcon 2 Orange Cross
+SetBackgroundColor 255 0 0
+SetBorderColor 255 255 255
+SetFontSize 35
+
+Show
+Class "Wands"
+BaseType "Expert " "Advanced "
+Rarity >= "Magic"
 PlayEffect Blue
-MinimapIcon 2 White Cross
+MinimapIcon 2 Blue Cross
 SetBorderColor 0 0 255 255
-SetFontSize 30
+SetFontSize 25
+
+Hide
+Class "Foci"
+BaseType " Voodoo" " Tonal" " Woven"
+
+Show
+Class "Foci"
+BaseType "Expert " "Advanced "
+Rarity >= "Magic"
+PlayEffect Blue
+MinimapIcon 2 Blue Cross
+SetBorderColor 0 0 255 255
+SetFontSize 25
+
+Hide
+Class "Quarterstaves"
+BaseType " Crackling" " Slicing"
+
+Show
+Class "Quarterstaves"
+BaseType "Expert " "Advanced "
+Rarity >= "Magic"
+PlayEffect Blue
+MinimapIcon 2 Blue Cross
+SetBorderColor 0 0 255 255
+SetFontSize 25
 
 Show
 Class "Bows"
-BaseType "Expert Dualstring" "Expert Zealot"
+BaseType "Expert Dualstring" "Advanced Dualstring"
 Rarity >= "Magic"
-PlayEffect Blue Temp
-MinimapIcon 2 White Cross
+PlayEffect Blue
+MinimapIcon 2 Blue Cross
 SetBorderColor 0 0 255 255
-SetFontSize 30
+SetFontSize 25
 
 Show
 Class "Helmets"
 BaseType == "Expert Feathered Tiara" "Expert Chain Tiara"
 Rarity >= "Magic"
 PlayEffect Blue
-MinimapIcon 2 White Cross
+MinimapIcon 2 Blue Cross
 SetBorderColor 0 0 255 255
-SetFontSize 30
+SetFontSize 25
 
 Show
 Class "Body Armours"
 BaseType == "Expert Scalper's Jacket"
 Rarity >= "Magic"
 PlayEffect Blue
-MinimapIcon 2 White Cross
+MinimapIcon 2 Blue Cross
 SetBorderColor 0 0 255 255
-SetFontSize 30
+SetFontSize 25
 
-Show
-Class "Sceptres"
-BaseType == "Rattling Sceptre"
-Rarity >= "Magic"
-PlayEffect Blue
-MinimapIcon 2 White Cross
-SetBorderColor 0 0 255 255
-SetFontSize 30
+#Show
+#Class "Sceptres"
+#BaseType == "Rattling Sceptre"
+#Rarity >= "Magic"
+#PlayEffect Blue
+MinimapIcon 2 Blue Cross
+#SetBorderColor 0 0 255 255
+#SetFontSize 25
 
 Show
 Class "Quivers"
 BaseType == "Primed Quiver"
 Rarity >= "Magic"
 PlayEffect Blue
-MinimapIcon 2 White Cross
+MinimapIcon 2 Blue Cross
 SetBorderColor 0 0 255 255
-SetFontSize 30
+SetFontSize 25
 
 #--------------------------
 # Gear (Only ES/EV)
@@ -522,8 +560,13 @@ BaseEnergyShield > 0
 BaseEvasion > 0
 SetFontSize 25
 
+Show
+BaseType " (Tier 4)"
+Rarity "Rare"
+SetFontSize 28
+
 Hide
-Class "Body Armours" "Boots" "Gloves" "Helmets" "Bows" "Crossbows" "Foci" "One Hand Maces" "Quivers" "Quarterstaves" "Sceptres" "Shields" "Staves" "Two Hand Maces" "Wands" "Belts"
+Class "Body Armours" "Boots" "Gloves" "Helmets" "Bows" "Crossbows" "One Hand Maces" "Quivers" "Quarterstaves" "Sceptres" "Shields" "Staves" "Two Hand Maces" "Wands" "Belts"
 Rarity <= Rare
 AreaLevel > 65
 
@@ -598,21 +641,21 @@ AreaLevel > 65
 # Flasks
 #--------------------------
 
-Show
-Class "Flask"
-BaseType "Ultimate"
-ItemLevel >= 71
-Quality >= 10
-SetBorderColor 0 255 0
-PlayEffect Grey
-SetFontSize 35
-
-Show
-Class "Flask"
-BaseType "Ultimate"
-ItemLevel >= 71
-SetBorderColor 255 0 0
-SetFontSize 25
+#Show
+#Class "Flask"
+#BaseType "Ultimate"
+#ItemLevel >= 71
+#Quality >= 10
+#SetBorderColor 0 255 0
+#PlayEffect Grey
+#SetFontSize 35
+#
+#Show
+#Class "Flask"
+#BaseType "Ultimate"
+#ItemLevel >= 71
+#SetBorderColor 255 0 0
+#SetFontSize 25
 
 Hide
 Class "Flask"
